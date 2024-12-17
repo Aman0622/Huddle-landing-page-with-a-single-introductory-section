@@ -1,0 +1,204 @@
+Use a more-intuitive box-sizing model *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  background-image: url("./images/bg-desktop.svg");
+  background-repeat: no-repeat;
+  background-color: hsl(257, 40%, 49%);
+  height: 100vh;
+  color: white;
+  background-size: cover;
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#logo {
+  padding: 3em 1em 3em 5em;
+  height: 50px;
+}
+#display {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+#screendiv {
+  width: 50%;
+}
+#screen {
+  width: 90%;
+}
+
+#content {
+  width: 45%;
+  margin-top: 3rem;
+}
+#content > h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 38px;
+}
+#content > p {
+  font-size: 16px;
+  margin-top: 1em;
+  width: 80%;
+}
+button {
+  height: 40px;
+  width: 33%;
+  border-radius: 30px;
+  margin-top: 1em;
+  color: hsl(300, 69%, 71%);
+  border-style: none;
+}
+button:hover {
+  color: white;
+  cursor: pointer;
+  background-color: hsl(300, 69%, 71%);
+  transition: 1s;
+  border-style: none;
+}
+#fontawesome {
+  display: flex;
+  justify-content: end;
+  margin-right: 3rem;
+  margin-top: rem;
+}
+#icon:hover {
+  cursor: pointer;
+  color: hsl(300, 69%, 71%);
+  border: 2px solid hsl(300, 69%, 71%);
+  transition: 1s;
+}
+#icon {
+  border: 2px solid white;
+  font-size: 20px;
+  padding: 0.5em;
+  margin-left: 0.5em;
+  border-radius: 50px;
+}
+
+@media screen and (max-width: 950px) {
+  #display {
+    display: flex;
+  }
+
+  #content > h1 {
+    font-size: 25px;
+    margin-top: -1.5rem;
+  }
+  #content > p {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 431px) {
+  #display {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    align-items: center;
+  }
+
+  #maindiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 80vh;
+  }
+  #logo {
+    align-self: flex-start;
+    width: 40%;
+    padding: 3rem 2rem 0 1rem;
+  }
+
+  #screendiv {
+    width: 90%;
+  }
+  #screen {
+    padding: 2rem 0 0 1rem;
+  }
+  #content {
+    width: 80%;
+    text-align: center;
+  }
+  button {
+    width: 60%;
+  }
+
+  #fontawesome {
+    padding: 3rem 0 1rem 1rem;
+    width: 48%;
+  }
+}
